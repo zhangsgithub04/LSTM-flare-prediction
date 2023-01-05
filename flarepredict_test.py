@@ -20,7 +20,7 @@ def test_model(args):
         print("\nModel id", model_id,
                 " does not exist for flare " + flare_label + "." + '\nPlease make sure to run training task with this id first')
         sys.exit()
-
+    print('model_dir:', model_dir)
     model = load_model(model_dir)
     # Test
     lstm_flare = LSTM_Flare()
@@ -60,24 +60,28 @@ def test_model(args):
     return result_file
 
 
-'''
-Command line parameters parser
-'''
-parser = argparse.ArgumentParser()
-parser.add_argument('-t', '--test_data_file', default=None,
-                    help='full path to a file includes test data to test/predict using a trained model, must be in csv with comma separator')
-parser.add_argument('-a', '--flare', default='C',
-                    help='Flare category to use for training. Available algorithms: C, M, and M5')
-parser.add_argument('-m', '--model_id', default='default_model',
-                    help='model id to save or load it as a file name. This is to identity each trained model.')
+# '''
+# Command line parameters parser
+# '''
+# parser = argparse.ArgumentParser()
+# parser.add_argument('-t', '--test_data_file', default=None,
+#                     help='full path to a file includes test data to test/predict using a trained model, must be in csv with comma separator')
+# parser.add_argument('-a', '--flare', default='C',
+#                     help='Flare category to use for training. Available algorithms: C, M, and M5')
+# parser.add_argument('-m', '--model_id', default='default_model',
+#                     help='model id to save or load it as a file name. This is to identity each trained model.')
 
-args, unknown = parser.parse_known_args()
-args = vars(args)
+# args, unknown = parser.parse_known_args()
+# args = vars(args)
 
 if __name__ == "__main__":
+    flare_label = str(sys.argv[1]).strip().upper()
+    if not flare_label in ['C','M','M5']:
+        print('Flare label must be one of: C, M, M5')
+        sys.exit()    
     from flarepredict_test import test_model
 
-    args = {'test_data_file': 'data/LSTM_C_sample_run/normalized_testing.csv',
-            'flare': 'C',
+    args = {'test_data_file': 'data/LSTM_' + flare_label + '_sample_run/normalized_testing.csv',
+            'flare': flare_label,
             'modelid': 'custom_model_id'}
     custom_result = test_model(args)

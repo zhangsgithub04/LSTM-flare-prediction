@@ -2,6 +2,7 @@ import argparse
 from LSTM_Flare import LSTM_Flare
 from sklearn.utils import class_weight
 from keras.models import *
+from keras import regularizers
 import numpy as np
 
 from flarepredict_utils import *
@@ -26,8 +27,8 @@ def train_model(args):
     y_train = np.array(y_train_data)
     y_train_tr = lstm_flare.data_transform(y_train)
 
-    class_weights = class_weight.compute_class_weight('balanced',
-                                                      np.unique(y_train), y_train)
+    class_weights = class_weight.compute_class_weight(class_weight = 'balanced',
+                                                      classes =np.unique(y_train), y=y_train)
     class_weight_ = {0: class_weights[0], 1: class_weights[1]}
     # print(class_weight_)
 
@@ -59,8 +60,12 @@ args, unknown = parser.parse_known_args()
 args = vars(args)
 
 if __name__ == "__main__":
-    args = {'train_data_file': 'data/LSTM_M5_sample_run/normalized_training.csv',
-            'flare': 'M5',
+    flare_label = str(sys.argv[1]).strip().upper()
+    if not flare_label in ['C','M','M5']:
+        print('Flare label must be one of: C, M, M5')
+        sys.exit()
+    args = {'train_data_file': 'data/LSTM_' + flare_label +'_sample_run/normalized_training.csv',
+            'flare': flare_label,
             'modelid': 'custom_model_id'
             }
     train_model(args)

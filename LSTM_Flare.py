@@ -24,7 +24,7 @@ import csv
 import numpy as np
 import os
 import warnings
-
+from keras import regularizers
 warnings.filterwarnings("ignore")
 
 class LSTM_Flare:
@@ -148,5 +148,5 @@ class LSTM_Flare:
         layer1_out = Dense(200, activation='relu')(attention_mul)
         layer2_out = Dense(500, activation='relu')(layer1_out)
         output = Dense(nclass, activation='softmax', activity_regularizer=regularizers.l2(0.0001))(layer2_out)
-        model = Model(input=[inputs], output=output)
+        model = Model([inputs], output)
         return model
