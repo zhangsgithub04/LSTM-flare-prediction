@@ -76,7 +76,7 @@ def test_model(args):
 
 if __name__ == "__main__":
     flare_label = str(sys.argv[1]).strip().upper()
-    if not flare_label in ['C','M','M5']:
+    if not flare_label in flares:
         print('Flare label must be one of: C, M, M5')
         sys.exit()    
     from flarepredict_test import test_model

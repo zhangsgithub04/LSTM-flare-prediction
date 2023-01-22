@@ -27,6 +27,26 @@ For the latest updates of FlarePredict refer to [https://github.com/deepsuncode/
 
 ## Installation on local machine
 
+Create a virtual environment.
+
+python -m pip virtualenv < env name >
+
+Using Pip
+
+* pip install pandas
+* python -m pip install tensorflow-macos
+* python -c 'import tensorflow as tf ;print(tf.version__)'
+* pip install scikit-learn
+* pip install keras
+
+Using conda
+* Install miniconda first 
+* eval "$(< conda path > shell.zsh hook)"
+* conda create -n <env name>
+* conda envs list  - gives name of all the environment
+* conda activate < environment name >
+* conda install < package name >
+
 |Library | Version   | Description  |
 |---|---|---|
 |pandas|1.1.5|Data analysis and manipulation tool|
