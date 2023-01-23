@@ -59,24 +59,9 @@ def test_model(args):
                 w.writerow(line)
     return result_file
 
-
-# '''
-# Command line parameters parser
-# '''
-# parser = argparse.ArgumentParser()
-# parser.add_argument('-t', '--test_data_file', default=None,
-#                     help='full path to a file includes test data to test/predict using a trained model, must be in csv with comma separator')
-# parser.add_argument('-a', '--flare', default='C',
-#                     help='Flare category to use for training. Available algorithms: C, M, and M5')
-# parser.add_argument('-m', '--model_id', default='default_model',
-#                     help='model id to save or load it as a file name. This is to identity each trained model.')
-
-# args, unknown = parser.parse_known_args()
-# args = vars(args)
-
 if __name__ == "__main__":
     flare_label = str(sys.argv[1]).strip().upper()
-    if not flare_label in ['C','M','M5']:
+    if not flare_label in flares:
         print('Flare label must be one of: C, M, M5')
         sys.exit()    
     from flarepredict_test import test_model

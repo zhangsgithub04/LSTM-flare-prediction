@@ -48,20 +48,10 @@ def train_model(args):
 '''
 Command line parameters parser
 '''
-parser = argparse.ArgumentParser()
-parser.add_argument('-t', '--train_data_file', default=None,
-                    help='full path to a file includes training data to create a model, must be in csv with comma separator')
-parser.add_argument('-f', '--flare', default='C',
-                    help='Flare category to use for training. Available algorithms: C, M, and M5')
-parser.add_argument('-m', '--modelid', default='default_model',
-                    help='model id to save or load it as a file name. This is to identity each trained model.')
-
-args, unknown = parser.parse_known_args()
-args = vars(args)
 
 if __name__ == "__main__":
     flare_label = str(sys.argv[1]).strip().upper()
-    if not flare_label in ['C','M','M5']:
+    if not flare_label in flares:
         print('Flare label must be one of: C, M, M5')
         sys.exit()
     args = {'train_data_file': 'data/LSTM_' + flare_label +'_sample_run/normalized_training.csv',
