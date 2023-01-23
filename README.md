@@ -34,14 +34,14 @@ python -m pip virtualenv < env name >
 Using Pip
 
 * pip install pandas
-* python -m pip install tensorflow-macos
+* python -m pip install tensorflow (Refer https://www.tensorflow.org/install/pip )
 * python -c 'import tensorflow as tf ;print(tf.version__)'
 * pip install scikit-learn
 * pip install keras
 
 Using conda
 * Install miniconda first 
-* eval "$(< conda path > shell.zsh hook)"
+* Refer to https://developers.google.com/earth-engine/guides/python_install-conda
 * conda create -n <env name>
 * conda envs list  - gives name of all the environment
 * conda activate < environment name >
