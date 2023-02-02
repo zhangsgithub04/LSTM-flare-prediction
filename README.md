@@ -27,34 +27,23 @@ For the latest updates of FlarePredict refer to [https://github.com/deepsuncode/
 
 ## Installation on local machine
 
-Create a virtual environment.
+Note: The versions listed below are required to run [Version v1.0.2](https://zenodo.org/record/5739321) of the tool on a local CPU. As the tool gets updated, the versions will change. 
 
-python -m pip virtualenv < env name >
+Tested on Python 3.7.16
 
-Using Pip
+Installing below mentioned packages using conda:
 
-* pip install pandas
-* python -m pip install tensorflow (Refer https://www.tensorflow.org/install/pip )
-* python -c 'import tensorflow as tf ;print(tf.version__)'
-* pip install scikit-learn
-* pip install keras
+```conda create -n <environment name> python=3.7.16 <library=version>```
 
-Using conda
-* Install miniconda first 
-* Refer to https://developers.google.com/earth-engine/guides/python_install-conda
-* conda create -n <env name>
-* conda envs list  - gives name of all the environment
-* conda activate < environment name >
-* conda install < package name >
+Note: Make sure tensorflow-estimator==1.15.1. If not  ```conda install -n <environment name> tensorflow-estimator=1.15.1```  
 
 |Library | Version   | Description  |
 |---|---|---|
-|pandas|1.1.5|Data analysis and manipulation tool|
-|h5py| 2.10.0|Pythonic interface to the HDF5 binary data format|
-| keras  | 2.2.4   |Artificial neural networks API   |
-|numpy| 1.19.2| Array manipulation|
+|pandas|1.3.5|Data analysis and manipulation tool|
 |scikit-learn| 0.24.2| Machine learning|
 | tensorflow  | 1.15.0  | Neural network libraries  |
+| keras  | 2.2.4   |Artificial neural networks API   |
+|h5py| 2.10.0|Pythonic interface to the HDF5 binary data format|
 
 ## References
 
