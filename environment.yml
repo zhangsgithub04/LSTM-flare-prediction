@@ -2,16 +2,16 @@ name: binder_env
 channels:
 - defaults
 dependencies:
-- pandas==1.4.1
-- python=3.9.7
+- pandas==1.5.2
+- python=3.10.9
 - pip
-- tensorflow=2.8.0
+- tensorflow=2.10.0
 - pip:
-  - h5py==3.1.0
-  - tensorflow==2.8.0
-  - keras==2.8.0
-  - numpy==1.21.6
-  - scikit-learn==1.0.2
-  - google-api-core==2.10.2
+  - h5py==3.7.0
+  - tensorflow==2.10.0
+  - keras==2.10.0
+  - numpy==1.23.5
+  - scikit-learn==1.2.0
+  - google-api-core==2.10.1
   - googleapis-common-protos==1.56.4
   - protobuf==3.20.3
