@@ -27,23 +27,19 @@ For the latest updates of FlarePredict refer to [https://github.com/deepsuncode/
 
 ## Installation on local machine
 
-Note: The versions listed below are required to run [Version v1.0.2](https://zenodo.org/record/5739321) of the tool on a local CPU. As the tool gets updated, the versions will change. 
-
-Tested on Python 3.7.16
+Note: Tested on Python 3.10.9
 
 Installing below mentioned packages using conda:
 
-```conda create -n <environment name> python=3.7.16 <library=version>```
-
-Note: Make sure tensorflow-estimator==1.15.1. If not  ```conda install -n <environment name> tensorflow-estimator=1.15.1```  
+```conda create -n <env-name> python=3.10.9 <library=version> <library=version> ...```
 
 |Library | Version   | Description  |
 |---|---|---|
-|pandas|1.3.5|Data analysis and manipulation tool|
-|scikit-learn| 0.24.2| Machine learning|
-| tensorflow  | 1.15.0  | Neural network libraries  |
-| keras  | 2.2.4   |Artificial neural networks API   |
-|h5py| 2.10.0|Pythonic interface to the HDF5 binary data format|
+|pandas|1.5.2|Data analysis and manipulation tool|
+|scikit-learn| 1.2.0| Machine learning|
+| tensorflow  | 2.10.0  | Neural network libraries  |
+| keras  | 2.10.0   |Artificial neural networks API   |
+|h5py| 3.7.0|Pythonic interface to the HDF5 binary data format|
 
 ## References
 
