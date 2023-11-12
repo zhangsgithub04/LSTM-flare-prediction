@@ -18,7 +18,7 @@ We present a long short-term memory (LSTM) network for predicting whether an act
 This notebook is Binder enabled and can be run on [mybinder.org](https://mybinder.org/) by using the link below.
 
 
-### run_FlarePredict.ipynb (Jupyter Notebook for FlarePredict)
+### Run FlarePredict.ipynb (Jupyter Notebook for FlarePredict)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zhangsgithub04/LSTM-flare-prediction/HEAD?labpath=ccsc_FlarePredict.ipynb)
 
 Please note that starting Binder might take some time to create and start the image.
