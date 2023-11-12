@@ -5,10 +5,10 @@ dependencies:
 - pandas==1.5.2
 - python=3.10.9
 - pip
-- tensorflow=2.12.0
+- tensorflow=2.11.0
 - pip:
   - h5py==3.7.0
-  - tensorflow==2.12.0
+  - tensorflow==2.11.0
   - keras==2.10.0
   - numpy==1.23.5
   - scikit-learn==1.2.0
